@@ -237,9 +237,7 @@ header.hero {
   nav .wrapper { padding: 12px 30px; }
   .burger-icon { display: inline-flex; align-items: center; justify-content: center; }
   .Menu {
-    display: flex;
-    pointer-events: none;
-    opacity: 0;
+    display: none;
     position: fixed;
     right: 16px;
     top: 68px;
@@ -250,8 +248,9 @@ header.hero {
     border-radius: 10px;
     flex-direction: column;
     gap: 0;
+    opacity: 0;
     transform: translateY(-10px);
-    transition: opacity 0.35s cubic-bezier(.4,0,.2,1), transform 0.35s cubic-bezier(.4,0,.2,1);
+    transition: opacity 0.25s ease, transform 0.25s ease;
     z-index: 1200;
   }
   .Menu ul {
@@ -269,10 +268,9 @@ header.hero {
     border-bottom: none;
   }
   .Menu.active {
+    display: flex;
     opacity: 1;
-    pointer-events: auto;
     transform: translateY(0);
-    transition: opacity 0.35s cubic-bezier(.4,0,.2,1), transform 0.35s cubic-bezier(.4,0,.2,1);
   }
   /* Statistik scrollable */
   #statistik .wrapper { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 10px; gap: 20px; justify-content: flex-start; }
