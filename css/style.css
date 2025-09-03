@@ -627,20 +627,20 @@ header.hero {
 /* Tambahan Responsive untuk Menu */
 @media only screen and (max-width: 900px) {
   nav .wrapper {
-    padding: 12px 20px; /* lebih kecil, biar tidak kepotong */
-    flex-wrap: wrap; /* biar kalau sempit, dia boleh turun baris */
+    padding: 12px 20px;
+    flex-wrap: nowrap;
     justify-content: space-between;
-    gap: 10px; /* jarak kecil antar elemen */
+    gap: 10px;
   }
 
   .Menu ul {
-    gap: 30px; /* kurangi jarak menu agar muat di layar kecil */
-    flex-wrap: wrap; /* menu tetap sejajar tapi boleh turun jika sempit */
+    gap: 10px;
+    flex-wrap: nowrap;
   }
 
   .Menu ul li a {
     padding: 8px 10px;
-    font-size: 0.95rem; /* sedikit kecil untuk muat */
+    font-size: 0.9rem;
   }
 }
 
@@ -690,12 +690,13 @@ header.hero {
 @media (max-width: 768px) {
   .footer-wrapper {
     flex-direction: column;
-    text-align: center;
-    align-items: center;
+    text-align: left;
+    align-items: flex-start;
+    gap: 20px;
   }
 
   .footer-right {
-    text-align: center;
+    text-align: left;
   }
 }
 
