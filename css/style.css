@@ -857,3 +857,67 @@ header.hero {
     opacity: 1;
   }
 }
+
+/* HERO RESPONSIVE UNTUK HP */
+@media (max-width: 768px) {
+  header.hero {
+    min-height: auto; /* Supaya tidak terlalu tinggi */
+    padding: 40px 20px; /* Kurangi padding */
+  }
+
+  .container {
+    flex-direction: column; /* Tumpuk ke atas-bawah */
+    gap: 30px; /* Jarak antar teks & gambar lebih kecil */
+  }
+
+  .hero-text {
+    text-align: center; /* Tengahin teks */
+    flex: 1;
+  }
+
+  .hero-image img {
+    width: 220px; /* Kecilkan foto biar proporsional */
+    height: auto;
+    border-radius: 50%;
+  }
+}
+
+/* MENU HAMBURGER RESPONSIVE */
+.burger-icon {
+  display: none; /* Default: sembunyi */
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .burger-icon {
+    display: block; /* Tampil hanya di HP */
+  }
+
+  .Menu {
+    display: none; /* Sembunyi menu default */
+    position: absolute;
+    top: 60px; /* Pas di bawah navbar */
+    right: 20px;
+    background: #0e1b31;
+    padding: 15px;
+    border-radius: 8px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .Menu.active {
+    display: flex; /* Muncul ketika burger diklik */
+  }
+
+  .Menu ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .Menu ul li a {
+    display: block;
+    padding: 10px;
+  }
+}
