@@ -143,3 +143,15 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+
+// ===========================
+// 6. BURGER MENU FUNCTIONALITY
+// ===========================
+document.addEventListener('DOMContentLoaded', function() {
+    const burgerIcon = document.querySelector('.burger-icon');
+    const menu = document.querySelector('.Menu');
+
+    burgerIcon.addEventListener('click', function() {
+        menu.classList.toggle('active');
+    });
+});
