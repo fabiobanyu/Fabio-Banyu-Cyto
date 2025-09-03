@@ -249,8 +249,9 @@ header.hero {
     flex-direction: column;
     gap: 0;
     opacity: 0;
+    pointer-events: none;
     transform: translateY(-10px);
-    transition: opacity 0.25s ease, transform 0.25s ease;
+    transition: opacity 0.35s cubic-bezier(.4,0,.2,1), transform 0.35s cubic-bezier(.4,0,.2,1);
     z-index: 1200;
   }
   .Menu ul {
@@ -270,7 +271,19 @@ header.hero {
   .Menu.active {
     display: flex;
     opacity: 1;
+    pointer-events: auto;
     transform: translateY(0);
+  }
+  .hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .hero-image img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
   }
   /* Statistik scrollable */
   #statistik .wrapper { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 10px; gap: 20px; justify-content: flex-start; }

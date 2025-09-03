@@ -124,9 +124,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Close menu when link is clicked (mobile only)
   menu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
+    link.addEventListener('click', function(e) {
       if (window.innerWidth <= 900) {
         menu.classList.remove('active');
+        // Smooth scroll ke section
+        const targetID = this.getAttribute('href');
+        const target = document.querySelector(targetID);
+        if (target) {
+          e.preventDefault();
+          setTimeout(() => {
+            target.scrollIntoView({ behavior: 'smooth' });
+          }, 250); // tunggu animasi fade out
+        }
       }
     });
   });
