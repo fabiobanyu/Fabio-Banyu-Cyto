@@ -152,13 +152,13 @@ document.addEventListener('DOMContentLoaded', function() {
   const menu = document.querySelector('.Menu');
 
   burgerIcon.addEventListener('click', function() {
-    menu.classList.toggle('active');
+    menu.classList.toggle('open');
   });
 
-  // Biar otomatis nutup setelah klik menu di HP
   document.querySelectorAll('.Menu a').forEach(link => {
     link.addEventListener('click', () => {
-      menu.classList.remove('active');
+      menu.classList.remove('open');
     });
   });
 });
+

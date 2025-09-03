@@ -882,34 +882,40 @@ header.hero {
   }
 }
 
-/* MENU HAMBURGER RESPONSIVE */
-.burger-icon {
-  display: none; /* Default: sembunyi */
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: white;
+/* Footer Style */
+footer {
+  padding: 20px 15px; /* Buang jarak kosong berlebihan */
+  text-align: center; /* Tengahin semua teks di HP */
 }
 
-@media (max-width: 768px) {
-  .burger-icon {
-    display: block; /* Tampil hanya di HP */
-  }
+footer .address, 
+footer .copyright {
+  margin: 5px 0; /* Rapetin jarak antar elemen */
+}
 
-  .Menu {
-    display: none; /* Sembunyi menu default */
-    position: absolute;
-    top: 60px; /* Pas di bawah navbar */
-    right: 20px;
-    background: #0e1b31;
-    padding: 15px;
-    border-radius: 8px;
-    flex-direction: column;
-    gap: 15px;
-  }
+/* Burger Menu Smooth Animation */
+.Menu {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: #0e1b31;
+  padding: 15px;
+  border-radius: 8px;
+  flex-direction: column;
+  gap: 15px;
 
-  .Menu.active {
-    display: flex; /* Muncul ketika burger diklik */
-  }
+  opacity: 0; /* Biar bisa fade in */
+  transform: translateY(-10px); /* Geser dikit ke atas */
+  transition: all 0.3s ease; /* Animasi smooth */
+}
+
+.Menu.active {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0); /* Balik normal */
+}
+
 
   .Menu ul {
     flex-direction: column;
@@ -920,4 +926,4 @@ header.hero {
     display: block;
     padding: 10px;
   }
-}
+
