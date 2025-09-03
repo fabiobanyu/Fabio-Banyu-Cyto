@@ -58,81 +58,24 @@ header.hero {
   box-shadow: 0 0 40px rgba(255,255,255,0.05), 0 0 80px rgba(255,255,255,0.03), inset 0 0 40px rgba(255,255,255,0.02);
 }
 
-  .about-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 24px;
-    margin-top: 16px;
-    margin-bottom: 16px;
-  }
-  .about-image img {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-    margin-bottom: 10px;
-    animation: aboutFadeIn 1.2s cubic-bezier(.4,1.6,.6,1);
-  }
-  .about-content {
-    max-width: 95vw;
-    text-align: center;
-    background: rgba(255,255,255,0.85);
-    border-radius: 16px;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
-    padding: 18px 12px 24px 12px;
-    margin-bottom: 8px;
-    animation: aboutFadeInUp 1.3s cubic-bezier(.4,1.6,.6,1);
-  }
-  .about-content h2 {
-    color: #253a5c;
-    font-size: 1.3rem;
-    margin-bottom: 6px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    animation: aboutFadeInUp 1.5s cubic-bezier(.4,1.6,.6,1);
-  }
-  .about-content .subtitle {
-    color: #dbc231;
-    font-weight: bold;
-    margin-bottom: 14px;
-    font-size: 1.1rem;
-    animation: aboutFadeInUp 1.7s cubic-bezier(.4,1.6,.6,1);
-  }
-  .about-info {
-    margin-bottom: 14px;
-    text-align: center;
-    font-size: 0.98rem;
-    animation: aboutFadeInUp 1.9s cubic-bezier(.4,1.6,.6,1);
-  }
-  .download-cv-btn {
-    display: inline-block;
-    margin: 0 auto;
-    background: linear-gradient(90deg,#dfc965 60%,#f7e9b0 100%);
-    color: #253a5c;
-    font-weight: 700;
-    border-radius: 24px;
-    padding: 12px 32px;
-    font-size: 1.08rem;
-    box-shadow: 0 2px 12px rgba(223,201,101,0.13);
-    border: none;
-    transition: transform 0.25s cubic-bezier(.4,1.6,.6,1), box-shadow 0.25s cubic-bezier(.4,1.6,.6,1);
-    animation: aboutFadeInUp 2.1s cubic-bezier(.4,1.6,.6,1);
-  }
-  .download-cv-btn:hover {
-    transform: scale(1.07);
-    box-shadow: 0 4px 24px rgba(223,201,101,0.22);
-  }
-  @keyframes aboutFadeIn {
-    from { opacity: 0; transform: scale(0.8); }
-    to { opacity: 1; transform: scale(1); }
-  }
-  @keyframes aboutFadeInUp {
-    from { opacity: 0; transform: translateY(32px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+.container {
+  display: flex; justify-content: center; align-items: center;
+  gap: 50px; max-width: 1200px; width: 100%; flex-wrap: wrap;
+}
+
+.hero-text { flex: 0.7; max-width: 600px; }
+.hero-text p.greeting { color: #dfc965; font-size: 1.8rem; margin: 30px 0 10px; font-weight: 500; }
+.hero-text h1 { font-size: 3rem; font-weight: 700; text-shadow: 0 0 10px rgba(255,255,255,0.3); }
+.hero-text h2 { font-size: 1.5rem; font-weight: 400; margin: 15px 0 30px; color: #ccc; text-shadow: 0 0 5px rgba(255,255,255,0.1); }
+.hero-text .title { font-style: italic; font-weight: 400; color: #cfcfcf; margin: 15px 0 30px; }
+.hero-text .description { margin-top: 0; font-size: 1rem; color: #d8d8d8; line-height: 1.6; max-width: 550px; text-align: justify; }
+
+.hero-image img {
+  max-width: 330px; width: 100%; border-radius: 20px;
+  box-shadow: 0 0 30px rgba(255,255,255,0.1);
+  margin: 60px 0 30px;
+}
+
 /* ========== STATISTIK ========== */
 #statistik { background-color: #253a5c; color: white; padding: 30px 20px; }
 #statistik .wrapper {
