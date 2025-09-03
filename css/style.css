@@ -193,10 +193,24 @@ header.hero {
 
 /* ========== RESPONSIVE ========== */
 @media (max-width: 900px) {
-  .container { flex-direction: column; text-align: center; }
-  .hero-text { max-width: 90%; }
-  .hero-image img { margin-top: 50px; }
-
+  .container {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+  .hero-text {
+    max-width: 100%;
+    text-align: center;
+  }
+  .hero-image {
+    margin: 0 auto;
+  }
+  .hero-image img {
+    margin-top: 30px;
+    width: 90vw;
+    max-width: 330px;
+    border-radius: 20px;
+  }
   nav .wrapper { padding: 12px 30px; }
   .burger-icon { display: inline-flex; align-items: center; justify-content: center; }
   .Menu {
@@ -235,23 +249,9 @@ header.hero {
     opacity: 1;
     transform: translateY(0);
   }
-
-  /* Sembunyikan menu utama di mobile */
-  .Menu {
-    display: none;
-  }
-  .Menu.active {
-    display: flex;
-  }
-
   /* Statistik scrollable */
   #statistik .wrapper { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 10px; gap: 20px; justify-content: flex-start; }
   .stat-item, .stat-item2, .stat-item3 { flex: 0 0 auto; min-width: 220px; margin-right: 10px; }
-
-  /* Hero image circle on mobile */
-  header.hero { min-height: auto; padding: 40px 20px; }
-  .hero-image img { width: 220px; height: auto; border-radius: 50%; }
-
   /* Footer: tetap berdampingan, gap kecil */
   .footer-wrapper {
     flex-direction: row;
@@ -263,6 +263,12 @@ header.hero {
   .footer-left, .footer-right {
     flex: 1 1 50%;
     width: auto;
+  }
+  /* About Me: gambar dan data berdampingan */
+  .about-container {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
   }
 }
 
