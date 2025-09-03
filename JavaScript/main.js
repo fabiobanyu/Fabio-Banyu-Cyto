@@ -98,44 +98,40 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.style.display === 'flex') closeModal(); });
 });
 
-// ==================================
-// 6. BURGER MENU (FIXED)
-// ==================================
-document.addEventListener('DOMContentLoaded', () => {
+// ===========================
+// 6. BURGER MENU FUNCTIONALITY (Mobile Only)
+// ===========================
+document.addEventListener('DOMContentLoaded', function() {
   const burgerIcon = document.querySelector('.burger-icon');
   const menu = document.querySelector('.Menu');
 
   if (!burgerIcon || !menu) return;
 
-  const openMenu = () => {
-    menu.classList.add('active');                 // gunakan class 'active' (sesuai CSS)
-    menu.setAttribute('aria-hidden', 'false');
-    burgerIcon.setAttribute('aria-expanded', 'true');
-  };
-  const closeMenu = () => {
-    menu.classList.remove('active');
-    menu.setAttribute('aria-hidden', 'true');
-    burgerIcon.setAttribute('aria-expanded', 'false');
-  };
-  const toggleMenu = () => {
-    menu.classList.contains('active') ? closeMenu() : openMenu();
-  };
-
-  burgerIcon.addEventListener('click', toggleMenu);
-
-  // Tutup saat klik link menu
-  menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
-
-  // Tutup saat klik di luar panel
-  document.addEventListener('click', (e) => {
-    const clickedInside = menu.contains(e.target) || burgerIcon.contains(e.target);
-    if (!clickedInside) closeMenu();
-  });
-
-  // Reset saat layar dibesarkan ke desktop
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 900) {
-      closeMenu();
+  function handleResize() {
+    if (window.innerWidth <= 900) {
+      burgerIcon.style.display = 'inline-flex';
+      menu.classList.remove('active');
+    } else {
+      burgerIcon.style.display = 'none';
+      menu.classList.remove('active');
+      menu.style.display = '';
     }
+  }
+
+  burgerIcon.addEventListener('click', function() {
+    menu.classList.toggle('active');
   });
+
+  // Close menu when link is clicked (mobile only)
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 900) {
+        menu.classList.remove('active');
+      }
+    });
+  });
+
+  window.addEventListener('resize', handleResize);
+  handleResize();
 });
+
