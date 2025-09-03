@@ -6,7 +6,6 @@
   <title>FBC</title>
 
   <link rel="stylesheet" href="css/style.css" />
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
@@ -19,16 +18,20 @@
         </div>
         <span class="logo-text">fbc<span class="dot">.java</span></span>
       </div>
-      <div class="Menu">
+
+      <!-- MENU (desktop + mobile) -->
+      <div class="Menu" id="mainMenu" aria-hidden="true">
         <ul>
           <li><a href="#hero">Home</a></li>
           <li><a href="#about-me">About Me</a></li>
           <li><a href="#portofolio">Portofolio</a></li>
         </ul>
       </div>
-      <div class="burger-icon">
+
+      <!-- BURGER BUTTON -->
+      <button class="burger-icon" aria-label="Open menu" aria-expanded="false" aria-controls="mainMenu">
         <i class="fas fa-bars"></i>
-      </div>
+      </button>
     </div>
   </nav>
 
@@ -100,9 +103,9 @@
             <li><strong>Status:</strong> College Student</li>
             <li><strong>Fun Fact:</strong> Forgetful & Like to get lost when traveling</li>
           </ul>
-        <a href="https://drive.google.com/uc?export=download&id=13neTjOZOSFzJT0TYtmWvsDqDpk6XxCqC" class="download-cv-btn" download>
-          <i class="fa-solid fa-file-arrow-down"></i> Download CV
-        </a>  
+          <a href="https://drive.google.com/uc?export=download&id=13neTjOZOSFzJT0TYtmWvsDqDpk6XxCqC" class="download-cv-btn" download>
+            <i class="fa-solid fa-file-arrow-down"></i> Download CV
+          </a>  
         </div>
       </div>
 
@@ -217,9 +220,9 @@
     </div>
   </footer>
 
-  <div id="projectModal" class="modal-overlay">
+  <div id="projectModal" class="modal-overlay" aria-hidden="true">
     <div class="modal-content">
-      <span class="close-button">&times;</span>
+      <span class="close-button" aria-label="Close modal">&times;</span>
       <img id="modalImage" src="" alt="Sertifikat Proyek">
       <h2 id="modalTitle"></h2>
       <p id="modalDescription"></p>
