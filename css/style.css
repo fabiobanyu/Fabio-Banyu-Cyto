@@ -1,0 +1,800 @@
+
+/* RESET DAN GLOBAL STYLES (Pengaturan Dasar untuk Seluruh Halaman) */
+
+/* Memilih semua elemen (*) untuk di-reset */
+* {
+    margin: 0;  /* Menghilangkan jarak luar (margin) standar dari browser */
+    padding: 0; /* Menghilangkan jarak dalam (padding) standar dari browser */
+    box-sizing: border-box; /* Mengubah cara kalkulasi ukuran box, agar padding dan border termasuk dalam width/height */
+}
+
+/* Pengaturan untuk seluruh halaman html dan body */
+html, body {
+    width: 100%;  /* Lebar halaman mengisi 100% layar */
+    height: 100%; /* Tinggi halaman mengisi 100% layar */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Jenis font default untuk semua teks */
+    background-color: #070e1a;
+    background-image: radial-gradient(circle at center, #1a2e47, #070e1a); /* Warna latar belakang utama halaman */
+    color: white; /* Warna teks default */
+    overflow-x: hidden; /* Mencegah scrolling ke samping (horizontal) */
+    scroll-behavior: smooth; /* Membuat efek scroll menjadi halus saat mengklik link anchor (#) */
+}
+
+/* NAVIGATION BAR (Menu Navigasi di Bagian Atas)          */
+/* Style untuk tag <nav> yang membungkus seluruh navigasi */
+nav {
+  background-color: #0e1b31; /* Warna latar belakang navigasi */
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05); /* Memberi efek bayangan tipis di bawah navigasi */
+  position: sticky; /* Membuat navigasi "menempel" di atas saat halaman di-scroll */
+  top: 0; /* Menentukan posisi menempelnya di paling atas (0px dari atas) */
+  z-index: 1000; /* Memastikan navigasi selalu berada di lapisan paling depan */
+}
+
+/* Style untuk pembungkus konten di dalam navigasi */
+nav .wrapper {
+  display: flex; /* Mengaktifkan mode Flexbox untuk layout yang fleksibel */
+  justify-content: space-between; /* Mendorong item ke ujung: logo di kiri, menu di kanan */
+  align-items: center; /* Membuat item sejajar secara vertikal (di tengah) */
+  padding: 14px 118px; /* Memberi jarak dalam (atas-bawah 14px, kiri-kanan 100px) */
+  max-width: 1200px; /* Membatasi lebar maksimum konten agar tidak terlalu lebar di layar besar */
+  margin: 0 auto; /* Menengahkan .wrapper di dalam <nav> */
+}
+
+/* Style untuk wadah yang menyatukan logo dan teksnya */
+.logo-container {
+  display: flex; /* Membuat logo dan teks di dalamnya menjadi sejajar */
+  align-items: center; /* Menengahkan logo dan teks secara vertikal */
+  gap: 15px; /* Memberi jarak 12px antara gambar logo dan teksnya */
+}
+
+/* Style khusus untuk gambar logo */
+.logo img {
+  width: 48px;  /* Menentukan lebar gambar logo */
+  height: 48px; /* Menentukan tinggi gambar (sama dengan lebar agar proporsional) */
+  border-radius: 50%; /* Kunci untuk membuat gambar menjadi lingkaran sempurna */
+  object-fit: cover; /* Mencegah gambar menjadi penyok/gepeng jika ukurannya tidak pas */
+}
+
+/* Style untuk teks logo "fbc.java" */
+.logo-text {
+  font-size: 1.2rem; /* Ukuran font untuk teks logo */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Jenis font (sebenarnya tidak perlu karena sudah di-set di body) */
+  color: white; /* Warna teks */
+  font-weight: 500; /* Ketebalan font, disamakan dengan menu */
+}
+
+/* Style khusus untuk bagian ".java" pada teks logo */
+.logo-text .dot {
+  color: #dfc965; /* Memberi warna emas pada teks di dalam span dengan class "dot" */
+}
+
+/* Style untuk pembungkus menu di sisi kanan */
+.Menu {
+  display: flex; /* Menggunakan flexbox */
+  justify-content: flex-end; /* Mendorong isinya (<ul>) ke ujung kanan */
+}
+
+/* Style untuk daftar menu (<ul>) */
+.Menu ul {
+  display: flex; /* Membuat item-item <li> menjadi sejajar horizontal */
+  list-style: none; /* Menghilangkan bullet points (titik-titik) dari list */
+  gap: 60px; /* Memberi jarak 30px antar setiap item menu (<li>) */
+}
+
+/* Style untuk setiap link (<a>) di dalam menu */
+.Menu ul li a {
+  color: white; /* Warna teks link */
+  text-decoration: none; /* Menghilangkan garis bawah dari link */
+  padding: 8px 14px; /* Memberi jarak di dalam setiap link agar area klik lebih besar */
+  transition: all 0.5s ease; /* Memberi efek transisi yang halus selama 0.3 detik */
+  border-radius: 4px; /* Memberi sudut yang sedikit melengkung */
+  font-weight: 500; /* Ketebalan font untuk link menu */
+}
+
+/* Style saat kursor mouse berada di atas link menu (hover) */
+.Menu ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Latar belakang menjadi sedikit terang */
+  color: #dfc965; /* Warna teks berubah menjadi emas */
+}
+
+
+/* HERO SECTION (Bagian Utama di Bawah Navigasi)          */
+
+/* Style untuk <header> yang menjadi bagian hero */
+header.hero {
+  display: flex; /* Menggunakan Flexbox */
+  align-items: center; /* Menengahkan konten secara vertikal */
+  justify-content: center; /* Menengahkan konten secara horizontal */
+  min-height: 77vh; /* Tinggi minimal adalah 90% dari tinggi layar viewport */
+  background-color: transparent; /* Latar belakang transparan agar bisa melihat efek gradient di body */
+  padding: 0 10%; /* Memberi jarak di sisi kiri dan kanan */
+  scroll-margin-top: 100px;
+  box-shadow: /* Memberi beberapa lapis bayangan untuk efek kedalaman */
+    0 0 40px rgba(255, 255, 255, 0.05),
+    0 0 80px rgba(255, 255, 255, 0.03),
+    inset 0 0 40px rgba(255, 255, 255, 0.02);
+}
+
+/* Style untuk pembungkus konten di dalam hero (teks dan gambar) */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    max-width: 1200px; /* [UBAH INI] Batasi lebar maksimum, sama seperti navbar */
+    width: 100%; /* Tetap ada agar responsif di layar kecil */
+    flex-wrap: wrap;
+}
+
+/* Style untuk kolom teks di sisi kiri */
+.hero-text {
+    flex: 0.7; /* Memungkinkan kolom ini untuk fleksibel (mengisi sisa ruang) */
+    max-width: 600px; /* Lebar maksimum kolom teks agar tidak terlalu memanjang */
+}
+
+/* Style untuk teks sapaan "Hello, I'm" */
+.hero-text p.greeting {
+    color: #dfc965; /* Warna teks emas */
+    font-size: 1.8rem; /* Ukuran font */
+    margin-bottom: 10px; /* Jarak bawah ke elemen berikutnya */
+    font-weight: 500; /* Ketebalan font */
+    margin-top: 30px;
+}
+
+/* Style untuk nama (<h1>) */
+.hero-text h1 {
+  font-size: 3rem; /* Ukuran font */
+  font-weight: 700; /* Ketebalan font (lebih tebal) */
+  margin: 0; /* Menghilangkan margin */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Efek bayangan pada teks */
+}
+
+/* Style untuk jabatan/title (<h2>) */
+.hero-text h2 {
+  font-size: 1.5rem; /* Ukuran font */
+  font-weight: 400; /* Ketebalan font (normal) */
+  margin: 15px 0 30px; /* Jarak (atas 15px, kiri-kanan 0, bawah 30px) */
+  color: #ccc; /* Warna teks abu-abu terang */
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.1); /* Efek bayangan pada teks */
+}
+
+/* Style untuk membuat title menjadi miring */
+.hero-text .title {
+  font-style: italic; /* Properti untuk membuat teks menjadi miring */
+  font-weight: 400;  /* Sedikit menipiskan font agar terlihat lebih elegan saat miring */
+  color: #cfcfcf; /* Warna yang sedikit redup cocok untuk sub-judul */
+  margin: 15px 0 30px; /* Jarak (atas 15px, kiri-kanan 0, bawah 30px) */
+}
+
+/* Style untuk paragraf deskripsi baru */
+.hero-text .description {
+  margin-top: 0; /* [UBAH INI] Hapus margin atas karena jarak sudah diatur oleh h2 */
+  font-size: 1rem;
+  color: #d8d8d8;
+  line-height: 1.6;
+  max-width: 550px;
+  text-align: justify; /* [TAMBAH INI] Membuat teks menjadi rata kanan-kiri */
+}
+
+/* Style untuk kolom gambar di sisi kanan */
+.hero-image img {
+  max-width: 330px; /* Lebar maksimum gambar */
+  width: 100%; /* Lebar gambar akan responsif, tapi tidak akan melebihi max-width */
+  border-radius: 20px; /* Sudut melengkung untuk gambar */
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.1); /* Efek bayangan di sekitar gambar */
+  margin-bottom: 30px;
+  margin-top: 60px; /* Memberi jarak atas agar tidak menempel dengan teks */
+}
+
+/* RESPONSIVE (Style Khusus untuk Layar Kecil/Mobile)     */
+
+/* Aturan ini hanya berlaku jika lebar layar 900px atau lebih kecil */
+@media only screen and (max-width: 900px) {
+  
+  /* Mengubah layout hero dari sejajar menjadi menurun */
+  .container {
+    flex-direction: column; /* Mengubah arah flex dari baris (row) menjadi kolom (column) */
+    text-align: center; /* Membuat semua teks di dalamnya menjadi rata tengah */
+  }
+
+  /* Menyesuaikan kolom teks untuk mode mobile */
+  .hero-text {
+    max-width: 90%; /* Mengizinkan kolom teks mengisi seluruh lebar */
+  }
+
+  /* Menyesuaikan gambar untuk mode mobile */
+  .hero-image img {
+    margin-top: 50px; /* Memberi jarak atas agar tidak menempel dengan teks */
+  }
+
+  /* Menyesuaikan padding navigasi agar tidak terlalu lebar di layar kecil */
+  nav .wrapper {
+    padding: 12px 30px; /* Mengurangi padding kiri dan kanan */
+  }
+
+}
+/* statistic section (Bagian Statistik) */
+
+#statistik {
+    background-color: #253a5c;
+    color: white;
+    padding: 30px 20px; /* Beri sedikit padding horizontal */
+}
+
+#statistik .wrapper {
+    display: flex;
+    justify-content: center; /* Pusatkan item jika lebar tidak penuh */
+    align-items: stretch; /* Pastikan semua item sama tinggi */
+    flex-wrap: wrap; /* Agar responsif di layar kecil */
+    gap: 50px; /* Jarak modern antar item, ganti space-evenly */
+    
+    max-width: 1200px;
+    margin: 0 auto; /* Menengahkan wrapper */
+}
+
+/* Style untuk setiap kolom statistik */
+.stat-item {
+    display: flex;
+    flex-direction: column; /* Susun konten ke bawah (judul di atas, sub-judul di bawah) */
+    align-items: center; /* Tengahkan konten di dalam kolom */
+    gap: 8px; /* Jarak antara judul dan sub-judul */
+    text-align: center;
+    flex: 1; /* Agar setiap item mencoba mengisi ruang yang sama */
+    min-width: 200px; /* Lebar minimum untuk responsivitas */
+    
+    /* Efek transisi untuk hover */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Efek saat kursor mouse di atas item */
+.stat-item:hover {
+    transform: translateY(-8px); /* Angkat sedikit ke atas */
+}
+.stat-item:hover h3 {
+    color: rgb(30, 243, 30); /* Ganti warna judul menjadi warna aksen Anda */
+}
+
+/* Judul (WhatsApp, YouTube, etc.) */
+.stat-item h3 {
+    font-size: 2rem; /* Ukuran yang pas untuk judul */
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Jarak antara ikon dan teks judul */
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+/* Sub-judul (Nomor, Nama Channel, etc.) */
+.stat-item p {
+    font-size: 1.5rem; /* Ukuran lebih kecil untuk hierarki yang jelas */
+    color: white; /* Warna sedikit redup agar tidak bersaing dengan judul */
+    font-weight: 500; /* Sedikit lebih tebal untuk sub-judul */
+}
+
+.stat-item2 {
+    display: flex;
+    flex-direction: column; /* Susun konten ke bawah (judul di atas, sub-judul di bawah) */
+    align-items: center; /* Tengahkan konten di dalam kolom */
+    gap: 8px; /* Jarak antara judul dan sub-judul */
+    text-align: center;
+    flex: 1; /* Agar setiap item mencoba mengisi ruang yang sama */
+    min-width: 200px; /* Lebar minimum untuk responsivitas */
+    
+    /* Efek transisi untuk hover */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Efek saat kursor mouse di atas item */
+.stat-item2:hover {
+    transform: translateY(-8px); /* Angkat sedikit ke atas */
+}
+.stat-item2:hover h3 {
+    color: rgb(250, 74, 74); /* Ganti warna judul menjadi warna aksen Anda */
+}
+
+/* Judul (WhatsApp, YouTube, etc.) */
+.stat-item2 h3 {
+    font-size: 2rem; /* Ukuran yang pas untuk judul */
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Jarak antara ikon dan teks judul */
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+/* Sub-judul (Nomor, Nama Channel, etc.) */
+.stat-item2 p {
+    font-size: 1.5rem; /* Ukuran lebih kecil untuk hierarki yang jelas */
+    color: white; /* Warna sedikit redup agar tidak bersaing dengan judul */
+    font-weight: 500; /* Sedikit lebih tebal untuk sub-judul */
+}
+
+.stat-item3 {
+    display: flex;
+    flex-direction: column; /* Susun konten ke bawah (judul di atas, sub-judul di bawah) */
+    align-items: center; /* Tengahkan konten di dalam kolom */
+    gap: 8px; /* Jarak antara judul dan sub-judul */
+    text-align: center;
+    flex: 1; /* Agar setiap item mencoba mengisi ruang yang sama */
+    min-width: 200px; /* Lebar minimum untuk responsivitas */
+    
+    /* Efek transisi untuk hover */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Efek saat kursor mouse di atas item */
+.stat-item3:hover {
+    transform: translateY(-8px); /* Angkat sedikit ke atas */
+}
+.stat-item3:hover h3 {
+    color: rgb(173, 129, 243); /* Ganti warna judul menjadi warna aksen Anda */
+}
+
+/* Judul (WhatsApp, YouTube, etc.) */
+.stat-item3 h3 {
+    font-size: 2rem; /* Ukuran yang pas untuk judul */
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Jarak antara ikon dan teks judul */
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+/* Sub-judul (Nomor, Nama Channel, etc.) */
+.stat-item3 p {
+    font-size: 1.5rem; /* Ukuran lebih kecil untuk hierarki yang jelas */
+    color: white; /* Warna sedikit redup agar tidak bersaing dengan judul */
+    font-weight: 500; /* Sedikit lebih tebal untuk sub-judul */
+}
+
+@media only screen and (max-width: 900px) {
+  #statistik .wrapper {
+    overflow-x: auto;        /* Aktifkan scroll horizontal */
+    flex-wrap: nowrap;       /* Jangan bungkus ke bawah */
+    padding-bottom: 10px;    /* Tambah jarak bawah agar tidak mepet */
+    gap: 20px;               /* Sedikit jarak antar elemen */
+    justify-content: flex-start;
+  }
+
+  .stat-item,
+  .stat-item2,
+  .stat-item3 {
+    flex: 0 0 auto;          /* Biarkan lebarnya tetap, jangan dikecilkan */
+    min-width: 220px;        /* Pastikan minimal cukup untuk isi */
+    margin-right: 10px;      /* Tambah jarak antar item jika perlu */
+  }
+
+  #statistik {
+    overflow-x: hidden; /* Hindari double-scroll */
+  }
+}
+
+#statistik .wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+#statistik .wrapper::-webkit-scrollbar-track {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+#statistik .wrapper::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+#statistik .wrapper::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+/* About Me Section */
+#about-me {
+  background-color: #eeeeee;
+  padding: 40px 20px;
+  scroll-margin-top: 215px;
+  text-align: center;
+}
+
+.about-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.about-title {
+  font-size: 3rem;
+  margin-bottom: 5px;
+  color: #122138;
+}
+
+.about-information {
+  color:#122138;
+  font-size: 1.2rem;
+  margin-bottom: 50px;
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.about-image img {
+  width: 300px;
+  height: 360px;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+}
+
+.about-content {
+  max-width: 500px;
+  text-align: left;
+}
+
+.about-content h2 {
+  font-size: 2rem;
+  color: #122138;
+  margin-bottom: 8px;
+}
+
+.about-content .subtitle {
+  color: #dbc231;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.about-info {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.about-info li {
+  margin-bottom: 5px;
+  font-size: 1rem;
+  color: #122138;
+}
+
+.about-motto {
+  font-size: 1.5rem;
+  color: #122138;
+  margin-top: 60px;
+  font-style: italic;
+}
+
+.download-cv-btn {
+  background-color: #FFD700;
+  color: #122138;
+  padding: 10px 20px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+  display: inline-block;
+  border: none; /* Menghilangkan border */
+}
+
+
+.download-btn:hover {
+  background-color: #e5c100;
+}
+
+.social-icons-inline {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  gap: 20px;
+  justify-content: start; /* atau center jika ingin di tengah */
+}
+
+.social-icons-inline a {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+}
+
+.social-icons-inline a:hover {
+  background-color: #dfc965;
+  color: #070e1a;
+  transform: translateY(-4px);
+}
+
+/* Portfolio Section */
+#portofolio {
+  background-color: #253a5c;
+  padding: 60px 20px;
+  scroll-margin-top: 80px;
+  color:#dfc965;
+}
+
+#portofolio .wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.portofolio-title {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  color: #dfc965;
+}
+
+.portofolio-description {
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 50px;
+}
+
+/* Academic Projects Grid */
+.academic-projects h3,
+.non-academic-projects h3 {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  text-align: Left;
+}
+
+.academic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.project-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.05);
+  padding: 20px;
+  text-align: left;
+  transition: transform 0.2s ease-out;
+  transform-style: preserve-3d;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.project-card h4 {
+  font-size: 1.2rem;
+  color: #122138;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* Non Academic Vertical List */
+.non-project {
+  background: #ffffff;
+  padding: 20px;
+  border-left: 6px solid #dfc965;
+  margin-bottom: 20px;
+  text-align: left;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  border-radius: 6px;
+}
+
+.non-project h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #122138;
+}
+
+.non-project p {
+  margin-top: 8px;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.non-project a {
+  color: #0d6efd;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.non-project a:hover {
+  text-decoration: underline;
+}
+
+/* Tambahan Responsive untuk Menu */
+@media only screen and (max-width: 900px) {
+  nav .wrapper {
+    padding: 12px 20px; /* lebih kecil, biar tidak kepotong */
+    flex-wrap: wrap; /* biar kalau sempit, dia boleh turun baris */
+    justify-content: space-between;
+    gap: 10px; /* jarak kecil antar elemen */
+  }
+
+  .Menu ul {
+    gap: 30px; /* kurangi jarak menu agar muat di layar kecil */
+    flex-wrap: wrap; /* menu tetap sejajar tapi boleh turun jika sempit */
+  }
+
+  .Menu ul li a {
+    padding: 8px 10px;
+    font-size: 0.95rem; /* sedikit kecil untuk muat */
+  }
+}
+
+.site-footer {
+  background-color: #0e1b31;
+  color: #b9cce1;
+  padding: 40px 20px 20px;
+  font-size: 0.95rem;
+}
+
+.footer-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 30px;
+}
+
+.footer-left {
+  flex: 1 1 250px;
+  margin-bottom: 20px;
+}
+
+.footer-left h4 {
+  color: #eaf4ff;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.footer-left p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.footer-right {
+  flex: 1 1 250px;
+  text-align: right;
+}
+
+.footer-right p {
+  margin: 0 0 10px 0;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .footer-wrapper {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-right {
+    text-align: center;
+  }
+}
+
+.before-reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.7s ease-out;
+}
+
+.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* =========================== */
+/* GAYA MODAL          */
+/* =========================== */
+
+/* Pastikan kartu proyek terlihat bisa diklik */
+.project-card {
+  cursor: pointer;
+}
+
+/* Lapisan latar belakang gelap */
+.modal-overlay {
+  position: fixed; /* Tetap di layar bahkan saat scroll */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* Warna hitam transparan */
+  display: none; /* Sembunyi secara default */
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Pastikan berada di paling depan */
+  padding: 20px;
+}
+
+/* Kotak konten modal */
+.modal-content {
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  max-width: 800px; /* Lebar maksimal modal */
+  width: 90%; /* Lebar relatif agar responsif */
+  max-height: 90vh; /* Tinggi maksimal, vh = viewport height */
+  overflow-y: auto; /* Tambahkan scroll jika konten panjang */
+  position: relative;
+  animation: zoomIn 0.3s ease-out; /* Animasi zoom saat muncul */
+  color: #333; /* Pastikan warna teks terlihat jelas di latar putih */
+}
+
+/* Tombol close (X) */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #555;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.close-button:hover {
+  color: #ff0000;
+}
+
+/* Gambar di dalam modal */
+#modalImage {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #eee;
+}
+
+/* Judul dan deskripsi di dalam modal */
+#modalTitle {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+  color: #1a1a1a;
+}
+
+#modalDescription {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Animasi zoom sederhana */
+@keyframes zoomIn {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
